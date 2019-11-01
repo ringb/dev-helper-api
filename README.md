@@ -3,6 +3,7 @@
 requires:
 - gradle (from) 4.4
 - java 1.8
+- docker
 
 BUILD APP:
 build: gradle build
