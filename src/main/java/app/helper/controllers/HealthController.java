@@ -8,6 +8,7 @@ public class HealthController {
 
     @RequestMapping("/")
     public String index() {
+        System.out.println("health up!");
         return "up";
     }
 
