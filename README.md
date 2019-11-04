@@ -32,4 +32,7 @@ add key pair while starting instance
 ssh -i "aws_prive" ec2-user@ec2-54-252-252-57.ap-southeast-2.compute.amazonaws.com
 
 
-ec2-54-252-252-57.ap-southeast-2.compute.amazonaws.com
+LOGS:
+logs: docker logs 4d0fa4454879
+
+current url: ec2-54-252-252-57.ap-southeast-2.compute.amazonaws.com
