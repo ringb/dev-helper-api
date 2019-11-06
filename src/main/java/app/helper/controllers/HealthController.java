@@ -10,7 +10,7 @@ public class HealthController {
 
     @RequestMapping("/")
     public String index() {
-        System.out.println(new Date().toString() +": Health Up!!");
+        System.out.println(new Date().toString() +": Health Up!!!!");
         return "up";
     }
 
