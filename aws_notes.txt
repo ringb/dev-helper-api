@@ -1,0 +1,26 @@
+
+How to push a container to ecr.
+- aws ecr get-login
+- remove "e none" from result above outcome. and run
+
+How to create a cluster / ec2 instance.
+- go to ecs and create a cluster
+- assign a key/pair to the cluster (see ec2 page in aws). so it is possible to ssh to instances using that key
+- create a task definition. think this is where you set the turn on the service discovery. so you can find the cluster using e.g. process3.local
+- create a process for the task. set min health percent to 0 and max to a 100 to be able to deploy with the script (build_push_deploy.txt).
+- selecting update on the process and "force new deploy" will redeploy the latest version of a container.
+
+How to login with ssh
+- create a key pair if not already done.
+- associate the key / pair with the instance if needed
+- "Security groups" allow inbound and outbound traffic to in instance. In order to allow ssh, go to the ec2 instance, select the security group and
+add inbound ssh over port 22.
+- login with ec2-user
+- create a elastic ip for a ec2 container so you can login with e.g.: ssh -i "aws_prive" ec2-user@13.237.160.103
+
+
+Routing / load balancing:
+- create a load balancer and associate it with an instance.
+- Route to loadbalancer: Go to route53 and select domain. "Create Record Set" select Type A (IP) and Alias Yes.
+  now enter the DNS name e.g.  of the loadbalancer (ecsLoadBalancer-2010154814.ap-southeast-2.elb.amazonaws.com)
+- A subdomain can be routed to any other domain via CNAME. "Create Record Set" and select CNAME. e.g. route test.dev-helper.org to app.dev-helper.org
