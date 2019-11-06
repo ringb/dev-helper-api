@@ -24,3 +24,8 @@ Routing / load balancing:
 - Route to loadbalancer: Go to route53 and select domain. "Create Record Set" select Type A (IP) and Alias Yes.
   now enter the DNS name e.g.  of the loadbalancer (ecsLoadBalancer-2010154814.ap-southeast-2.elb.amazonaws.com)
 - A subdomain can be routed to any other domain via CNAME. "Create Record Set" and select CNAME. e.g. route test.dev-helper.org to app.dev-helper.org
+
+HTTPS:
+- with certificate manager you can request a certificate for a domain/subdomain
+- to verify the certificate you need to create some temp CNAME entries to the authorizing process (??) can verify if you indeed own the domain.
+- the certificate can be associated with the loadBalancer on creation.
