@@ -15,12 +15,13 @@ run jar: gradle build && java -jar build/libs/dev-helper-api.jar
 run app in docker: docker run -p 8080:8080 springio/dev-helper-api
 
 
+
 PUSH CONTAINER:
 login aws / ecr
 aws ecr get-login
 remove "e none" from result above outcome. and run
 
-tag and release:
+TAG AND RELEASE:
 list images: docker images
 docker image rm springio/dev-helper-api 
 docker image rm 289802917946.dkr.ecr.ap-southeast-2.amazonaws.com/dev-helper
@@ -28,6 +29,8 @@ gradle build docker
 docker tag springio/dev-helper-api:latest 289802917946.dkr.ecr.ap-southeast-2.amazonaws.com/dev-helper
 docker push 289802917946.dkr.ecr.ap-southeast-2.amazonaws.com/dev-helper
 
+BUILD DEPLOY SCRIPT (might not be working..)
+build_push_deploy.sh
 
 LOGIN / SSH:
 add key pair while starting instance
