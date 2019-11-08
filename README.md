@@ -14,8 +14,6 @@ run app local: gradle bootRun
 run jar: gradle build && java -jar build/libs/dev-helper-api.jar
 run app in docker: docker run -p 8080:8080 springio/dev-helper-api
 
-
-
 PUSH CONTAINER:
 login aws / ecr
 aws ecr get-login
@@ -44,3 +42,7 @@ ssh -i "aws_prive" ec2-user@13.236.11.184
 
 LOGS:
 logs: docker logs 4d0fa4454879
+
+
+POSTGRES:
+local user password: postgres
