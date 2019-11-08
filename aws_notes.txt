@@ -5,6 +5,7 @@ How to push a container to ecr.
 
 How to create a cluster / ec2 instance.
 - go to ecs and create a cluster
+- select the VPC (Network) you want to add the instance to. If you don't select one, it will create a new VPC for each cluster.
 - assign a key/pair to the cluster (see ec2 page in aws). so it is possible to ssh to instances using that key
 - create a task definition. think this is where you set the turn on the service discovery. so you can find the cluster using e.g. process3.local
 - create a process for the task. set min health percent to 0 and max to a 100 to be able to deploy with the script (build_push_deploy.txt).
