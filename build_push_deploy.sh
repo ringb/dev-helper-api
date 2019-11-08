@@ -1,6 +1,6 @@
 #!/bin/bash
 CLUSTER_NAME="cluster2"
-PROCESS_NAME="process3"
+PROCESS_NAME="ecsService3"
 echo "Starting build, push and deploy to cluste: " $CLUSTER_NAME " process: " $PROCESS_NAME
 gradle build docker
 docker image rm springio/dev-helper-api
