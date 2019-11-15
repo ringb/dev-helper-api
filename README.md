@@ -45,4 +45,5 @@ logs: docker logs 4d0fa4454879
 
 
 POSTGRES:
-local user password: postgres
+local user: postgres
+local password: postgres
