@@ -21,11 +21,11 @@ public class UserService {
 
     @Autowired
     public UserService(UserRepository userRepository,
-                       RoleRepository roleRepository
-                       /*BCryptPasswordEncoder bCryptPasswordEncoder*/) {
+                       RoleRepository roleRepository,
+                       BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
-        //this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
     public User findUserByEmail(String email) {
